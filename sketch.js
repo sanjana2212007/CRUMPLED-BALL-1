@@ -17,8 +17,11 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
-
-
+ground=new Ground(400,500,800,22)
+paper=new Paper(50,100,30)
+db1=new Dustbin(400,440,20,100)
+db2=new Dustbin(600,440,20,100)
+db3=new Dustbin(500,480,220,20)
 	Engine.run(engine);
   
 }
@@ -29,8 +32,20 @@ function draw() {
   background(0);
   
   drawSprites();
- 
+ ground.display()
+ paper.display()
+ db1.display()
+ db2.display()
+ db3.display()
+}
+function keyPressed(){
+if(keyCode===UP_ARROW){
+Matter.Body.applyForce(paper.body,paper.body.position,{x:30,y:-30})
+
+
+
 }
 
+}
 
 
